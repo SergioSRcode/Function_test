@@ -1,0 +1,19 @@
+function calcTot(merchTot) {
+	let orderTot;
+	if (merchTot >= 100) {
+  	orderTot = merchTot;
+	}
+	else if (merchTot <= 50) {
+  	orderTot = merchTot + 5;
+	}
+	else {
+  	orderTot = merchTot + 5 + (0.03 * (merchTot - 50));
+	}
+  return orderTot;
+}
+
+let yourCostStr = prompt("Indicate your cost!");
+let yourCost = Number(yourCostStr);
+let totalToCharge = calcTot(yourCost).toFixed(2);
+
+alert(totalToCharge);
